@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from "react";
 import { Ctx } from "../context/store";
-import { getForecastFiveDaysByCity, getForecastFiveDaysByLocation } from "../services/api";
+import { getForecastFiveDaysByCity, getForecastFiveDaysByGeoLocation } from "../services/api";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -40,7 +40,7 @@ const Forecast = () => {
                     res = await getForecastFiveDaysByCity(city);
                 }
                 else {
-                    res = await getForecastFiveDaysByLocation(location.lat, location.long);
+                    res = await getForecastFiveDaysByGeoLocation(location.lat, location.long);
                 }
                 if (res.status === 200) {
                     setForecastData(res.data);
@@ -81,7 +81,10 @@ const Forecast = () => {
                         ]
                     },
                     details: {
-
+                        weather: forecastDataByDay[day].map(item => ({
+                            ...item.weather[0],
+                            hour: item.dt_txt.split(" ")[1].slice(0, 5)
+                        }))
                     }
                 }
             })
@@ -116,7 +119,16 @@ const Forecast = () => {
                             {/* <hr style={{ margin: '1rem 0' }} /> */}
                             <Line options={options} data={dayData.chart} />
                             <Accordion title="Details" className="forecast-accordion" defaultState={'close'}>
-                                ceva content
+                                <div className="forecast-accordion-details-container">
+                                    {dayData?.details?.weather.map(item => (
+                                        <div className="forecast-accordion-details-card">
+                                            <h3>{item.hour}</h3>
+                                            <img src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt="..." />
+                                            <p>{item.description}</p>
+                                        </div>
+                                    ))}
+
+                                </div>
                             </Accordion>
                         </div>
 

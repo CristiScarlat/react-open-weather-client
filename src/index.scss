@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #8982a31f;
@@ -32,6 +33,33 @@ main {
     margin: auto;
     .forecast-accordion {
       margin: 1rem 0;
+      .forecast-accordion-details-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        align-items: center;
+        margin: 1rem 0;
+        padding: 1rem;
+        overflow: auto;
+        .forecast-accordion-details-card {
+          max-width: 10rem;
+          box-shadow: 0px 1px 5px 1px #1e1e1d;
+          padding: 0.5rem;
+          text-align: center;
+          border-radius: 5px;
+          height: 210px;
+          background-color: rgba(0, 0, 0, 0.1882352941);
+          color: #2d2f91;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h3,
+          p {
+            margin: 0;
+          }
+        }
+      }
     }
     .forecast-chart-container {
       box-shadow: 0px 1px 5px 1px #1e1e1d;

@@ -25,6 +25,6 @@ export const getForecastFiveDaysByCity = (city) => {
     return api.get(`/forecast?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
 }
 
-export const getForecastFiveDaysByLocation = (lat, lon) => {
+export const getForecastFiveDaysByGeoLocation = (lat, lon) => {
     return api.get(`/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
 }

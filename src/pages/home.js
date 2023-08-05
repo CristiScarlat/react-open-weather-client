@@ -66,7 +66,6 @@ const Home = () => {
         // })
     }, [city])
 
-    console.log({ weatherData })
 
     return (
         <main>
