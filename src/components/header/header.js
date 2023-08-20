@@ -11,7 +11,6 @@ const Header = () => {
     const handleSearchCity = (e) => {
         e.preventDefault();
         setCity(e.target[0].value);
-
     }
 
     return (

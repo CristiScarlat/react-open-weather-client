@@ -70,7 +70,7 @@ const Home = () => {
     return (
         <main>
             <h1>{weatherData?.name}</h1>
-            <div className="home-weather-icon-container">
+            <div className="home-weather-icon-container home-weather-data-container">
                 <img src={`http://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`} alt="..." />
                 <span>{weatherData?.weather[0].description}</span>
             </div>

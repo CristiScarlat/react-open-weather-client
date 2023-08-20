@@ -82,14 +82,13 @@ const Forecast = () => {
                     },
                     details: {
                         weather: forecastDataByDay[day].map(item => ({
+                            ...item.main,
                             ...item.weather[0],
                             hour: item.dt_txt.split(" ")[1].slice(0, 5)
                         }))
                     }
                 }
             })
-
-            console.log(tempDataArray)
             setTempGraphData(tempDataArray);
         }
     }, [forecastData])
@@ -107,7 +106,7 @@ const Forecast = () => {
         },
     };
 
-    console.log({ tempGraphData })
+    console.log(tempGraphData)
 
     return (
         <main>
@@ -125,6 +124,7 @@ const Forecast = () => {
                                             <h3>{item.hour}</h3>
                                             <img src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt="..." />
                                             <p>{item.description}</p>
+                                            <p>{Math.floor(item.temp)}&#8451;</p>
                                         </div>
                                     ))}
 
