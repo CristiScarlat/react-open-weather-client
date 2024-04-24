@@ -96,6 +96,20 @@ main {
   color: #5d5a5a;
 }
 
+.about-container {
+  text-align: center;
+  hr {
+    box-shadow: 1px 1px 2px 1px rgba(204, 202, 206, 0.8509803922);
+  }
+  .about-card {
+    max-width: 45rem;
+    box-shadow: 1px 1px 9px 6px #cccaced9;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .home-wrapper {
     padding: 0 1rem;
