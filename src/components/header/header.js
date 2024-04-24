@@ -23,9 +23,9 @@ const Header = () => {
                 <hr className="header-separator" />
                 <span className="span-brand">OpenWeather Api Client</span>
                 <div className="header-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/forecast">Forecast</Link>
-                    <Link to="/about">About</Link>
+                    <Link to="/" onClick={() => setShowHeaderMenu(false)}>Home</Link>
+                    <Link to="/forecast" onClick={() => setShowHeaderMenu(false)}>Forecast</Link>
+                    <Link to="/about" onClick={() => setShowHeaderMenu(false)}>About</Link>
                 </div>
                 <hr className="header-separator" />
                 <form className="header-form" onSubmit={handleSearchCity}>
