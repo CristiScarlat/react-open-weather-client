@@ -8,12 +8,12 @@ const About = () => {
         <p>Please use the english version of your city name(ex. "București" has to be "Bucharest")</p>
         <hr/>
         <div className="about-card">
-          <img src="/images/forecast-about-1.png"/>
+          <img src="/images/forecast-about-1.png" style={{width: "100%"}}/>
           <p>You can see the forecast temperatures in an 3 hours interval for five days in cards like this.</p>
         </div>
 
         <div className="about-card">
-          <img src="/images/forecast-about-2.png"/>
+          <img src="/images/forecast-about-2.png" style={{width: "100%"}}/>
           <p>And if you expand the footer of the card, you can see the forecasted weather description.</p>
         </div>
       </div>
