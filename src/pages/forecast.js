@@ -17,6 +17,7 @@ const Forecast = () => {
     const { city, location } = useContext(Ctx);
 
     ChartJS.register(...registerables);
+    ChartJS.defaults.color = "white";
 
     const filterForecastDataByDay = () => {
         const dataByDay = {};
@@ -103,10 +104,12 @@ const Forecast = () => {
                 display: false,
                 text: '5 days temperature forecast',
             },
+            grid: {
+                color: "white"
+            }
         },
     };
 
-    console.log(tempGraphData)
 
     return (
         <main>
